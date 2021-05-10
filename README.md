@@ -4,9 +4,9 @@ Finds all accounts deposited to master-chef for a particular pair and gets the u
 
 ## python3 main.py 
 
-run the script on default configuration (eth, bsc).
+run the script on default configuration (eth (sushi), bsc (pancake-v1), bsc (pancake-v2)).
 use python3 main.py -h for usage
 
-## contacts_info.json
+## config.json
 
-change contracts configuration parameters 
+use to change contracts configuration parameters 
