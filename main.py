@@ -107,6 +107,7 @@ class TopHolders(object):
     def get_master_chef_balance(self):
         lp_address, _, _, _ = self.contract.functions.poolInfo(self.pid).call()
         assert lp_address == self.contract_info['lp']['address'], 'please update lp address and abi in contract info (lp_address={})'.format(lp_address)
+        lp_address = self.contract_info['lp']['address']
         lp_contract = self.get_contract(lp_address, self.contract_info['lp']['abi'])
         # get the balance of master-chef in lp contract
         master_chef_lp = lp_contract.functions.balanceOf(Web3.toChecksumAddress(self.contract_info['address'])).call()
@@ -212,6 +213,8 @@ class TopHolders(object):
 
             users_info = sorted(users_info, key=lambda x: x[1], reverse=True)
             self.csv_writer(['address', 'amount_pct', 'balance_usd', 'is_contract'], users_info)
+
+        print('all done')
 
 
 if __name__ == '__main__':
