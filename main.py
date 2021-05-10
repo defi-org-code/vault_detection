@@ -9,7 +9,7 @@ import math
 
 class TopHolders(object):
 
-    CONTRACT_INFO_FNAME = '{}/contracts_info.json'.format(str(Path().absolute()))
+    CONFIG_FNAME = '{}/config.json'.format(str(Path().absolute()))
     CHUNK_SIZE = 4999
     N_BLOCKS = CHUNK_SIZE
 
@@ -22,7 +22,7 @@ class TopHolders(object):
 
     def get_contracts_info(self):
 
-        with open(self.CONTRACT_INFO_FNAME) as f:
+        with open(self.CONFIG_FNAME) as f:
             return json.load(f)
 
     @property
