@@ -7,7 +7,7 @@ import csv
 import math
 
 
-class TopHolders(object):
+class VaultDetection(object):
 
     CONFIG_FNAME = '{}/config.json'.format(str(Path().absolute()))
     CHUNK_SIZE = 4999
@@ -225,5 +225,5 @@ if __name__ == '__main__':
     parser.add_argument('-b', '--bsc_node_url', required=False, help='bsc node url', default='https://bsc-dataseed1.binance.org:443')
     args = parser.parse_args()
 
-    top_holders = TopHolders(args.verbose, args.eth_node_url, args.bsc_node_url)
-    top_holders.main()
+    vault_detection = VaultDetection(args.verbose, args.eth_node_url, args.bsc_node_url)
+    vault_detection.main()
