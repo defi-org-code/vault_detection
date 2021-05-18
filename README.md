@@ -1,4 +1,4 @@
-# top_holders
+# vault_detection
 
 Finds all accounts deposited to master-chef for a particular pair and gets the user info for this account, sort the result and save it to csv file.
 
